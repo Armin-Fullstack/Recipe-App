@@ -25,7 +25,7 @@ const Popular = () => {
     <>
       {/* section container */}
       <div className="my-[4rem] container">
-        <h1>Popular Picks</h1>
+        <h1 className="mb-5">Popular Picks</h1>
 
         <Splide
           options={{
@@ -33,7 +33,7 @@ const Popular = () => {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            gap: "3rem",
           }}
         >
           {/* rendering the cards */}
@@ -42,7 +42,8 @@ const Popular = () => {
               <SplideSlide key={element.id}>
                 {/* card container */}
                 <div className="pickgradient relative rounded-[2rem] overflow-hidden">
-                  <p>
+                  <p className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
+                  text-white text-center text-[0.5rem] w-full font-bold h-[40%] flex justify-center items-center">
                     {element.title}
                   </p>
                   <img
