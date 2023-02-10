@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
-
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
@@ -10,7 +9,7 @@ const Popular = () => {
     getPopular();
   }, []);
 
-// fetch data
+  // fetch data
   const getPopular = async () => {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${
@@ -23,24 +22,35 @@ const Popular = () => {
 
   return (
     <>
-        {/* section container */}
+      {/* section container */}
       <div className="my-[4rem]">
         <h1>Popular Picks</h1>
 
-        {/* rendering the cards */}
-        {popular.map((element) => {
-          return (
-            // card container
-            <div className="min-h-[25rem] rounded-[2rem] overflow-hidden">
-              <p>{element.title}</p>
-              <img
-                src={element.image}
-                alt={element.title}
-                className="rounded-[2rem]"
-              />
-            </div>
-          );
-        })}
+        <Splide options={{
+            perPage: 4,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "5rem"
+            
+        }}>
+          {/* rendering the cards */}
+          {popular.map((element) => {
+            return (
+              <SplideSlide key={element.id}>
+                {/* card container */}
+                <div className="min-h-[25rem] rounded-[2rem] overflow-hidden">
+                  <p>{element.title}</p>
+                  <img
+                    src={element.image}
+                    alt={element.title}
+                    className="rounded-[2rem] cursor-pointer"
+                  />
+                </div>
+              </SplideSlide>
+            );
+          })}
+        </Splide>
       </div>
     </>
   );
