@@ -18,29 +18,33 @@ const Popular = () => {
     );
     const data = await api.json();
     setPopular(data.recipes);
+    console.log(data)
   };
 
   return (
     <>
       {/* section container */}
-      <div className="my-[4rem]">
+      <div className="my-[4rem] container">
         <h1>Popular Picks</h1>
 
-        <Splide options={{
+        <Splide
+          options={{
             perPage: 4,
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "5rem"
-            
-        }}>
+            gap: "5rem",
+          }}
+        >
           {/* rendering the cards */}
           {popular.map((element) => {
             return (
               <SplideSlide key={element.id}>
                 {/* card container */}
-                <div className="min-h-[25rem] rounded-[2rem] overflow-hidden">
-                  <p>{element.title}</p>
+                <div className="pickgradient relative rounded-[2rem] overflow-hidden">
+                  <p>
+                    {element.title}
+                  </p>
                   <img
                     src={element.image}
                     alt={element.title}
