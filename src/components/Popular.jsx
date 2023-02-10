@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
+
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
@@ -24,7 +27,7 @@ const Popular = () => {
       <div className="my-[4rem]">
         <h1>Popular Picks</h1>
 
-        {/* rendering cards */}
+        {/* rendering the cards */}
         {popular.map((element) => {
           return (
             // card container
