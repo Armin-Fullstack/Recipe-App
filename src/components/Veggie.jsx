@@ -1,7 +1,8 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 
 const Veggie = () => {
+    const [veggie , setVeggie] = useState([])
 
     useEffect(() => {
         getVeggie()
