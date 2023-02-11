@@ -8,7 +8,12 @@ const Veggie = () => {
         getVeggie()
     } , [])
 
+    // fetch data
     const getVeggie = async () => {
+        // getting the items from localstorage
+        const check = localStorage.getItem("vegetarian")
+        
+
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${
             import.meta.env.VITE_APP_API_KEY
           }&number=9&tags=vegetarian`)
