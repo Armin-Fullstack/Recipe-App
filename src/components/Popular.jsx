@@ -13,7 +13,11 @@ const Popular = () => {
   const getPopular = async () => {
     // getting the items from localstorage
     const check = localStorage.getItem("popular")
-    
+
+    if(check) {
+      // pulling back from local storage- string to an array
+      setPopular(JSON.parse(check))
+    }
     
     const api = await fetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${
