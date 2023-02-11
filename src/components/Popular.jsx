@@ -12,11 +12,11 @@ const Popular = () => {
   // fetch data
   const getPopular = async () => {
     // getting the items from localstorage
-    const check = localStorage.getItem("popular")
+    const check = localStorage.getItem("popular");
 
-    if(check) {
+    if (check) {
       // pulling back from local storage- string to an array
-      setPopular(JSON.parse(check))
+      setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
         `https://api.spoonacular.com/recipes/random?apiKey=${
@@ -25,10 +25,9 @@ const Popular = () => {
       );
       const data = await api.json();
       // setting the items to local storage
-      localStorage.setItem("popular" , JSON.stringify(data.recipes))
+      localStorage.setItem("popular", JSON.stringify(data.recipes));
       setPopular(data.recipes);
     }
-    
   };
 
   return (
@@ -52,8 +51,10 @@ const Popular = () => {
               <SplideSlide key={element.id}>
                 {/* card container */}
                 <div className="pickgradient relative rounded-[2rem] overflow-hidden">
-                  <p className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
-                  text-white text-center text-[0.7rem] w-full font-bold h-[40%] flex justify-center items-center">
+                  <p
+                    className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
+                  text-white text-center text-[0.7rem] w-full font-bold h-[40%] flex justify-center items-center"
+                  >
                     {element.title}
                   </p>
                   <img
