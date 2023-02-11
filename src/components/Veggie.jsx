@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 
 
 const Veggie = () => {
+
+    useEffect(() => {
+        getVeggie()
+    } , [])
 
     const getVeggie = async () => {
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${
