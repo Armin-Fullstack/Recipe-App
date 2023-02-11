@@ -17,15 +17,17 @@ const Popular = () => {
     if(check) {
       // pulling back from local storage- string to an array
       setPopular(JSON.parse(check))
+    } else {
+      const api = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${
+          import.meta.env.VITE_APP_API_KEY
+        }&number=9`
+      );
+      const data = await api.json();
+      // setting the items to local storage
+      localStorage.setItem("popular" , JSON.stringify(data.recipes))
+      setPopular(data.recipes);
     }
-    
-    const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${
-        import.meta.env.VITE_APP_API_KEY
-      }&number=9`
-    );
-    const data = await api.json();
-    setPopular(data.recipes);
     
   };
 
