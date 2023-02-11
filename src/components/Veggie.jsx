@@ -15,13 +15,15 @@ const Veggie = () => {
         if(check) {
             // pulling back from local storage- string to an array
             setVeggie(JSON.parse(check))
+        } else {
+            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${
+                import.meta.env.VITE_APP_API_KEY
+              }&number=9&tags=vegetarian`)
+              const data = await api.json()
+              // setting the items to local storage
+              localStorage.setItem("vegetarian" , JSON.stringify(data.recipes))
+              setVeggie(data.recipes)
         }
-
-        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${
-            import.meta.env.VITE_APP_API_KEY
-          }&number=9&tags=vegetarian`)
-          const data = await api.json()
-          console.log(data)
     }
 
     return(
