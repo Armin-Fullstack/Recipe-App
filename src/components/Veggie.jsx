@@ -30,7 +30,18 @@ const Veggie = () => {
        <>
         {/* veggie container  */}
        <div className="my-[4rem] container">
-            
+            <h1 className="mb-5">Vegetarian Picks</h1>
+
+            {/* rendering the cards */}
+            {veggie.map(element => {
+                return (
+
+                    // card container 
+                    <div className="pickgradient relative rounded-[2rem] overflow-hidden">
+                        
+                    </div>
+                )
+            })}
        </div>
        
        </>
