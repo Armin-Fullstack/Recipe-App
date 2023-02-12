@@ -3,7 +3,13 @@ import {GiNoodles , GiChopsticks} from "react-icons/gi"
 
 const Category = () => {
     return (
-        null
+        <>
+        {/* Icons container */}
+        <div className="flex justify-center items-center my-[2rem]">
+                
+        </div>
+        
+        </>
     )
 }
 
