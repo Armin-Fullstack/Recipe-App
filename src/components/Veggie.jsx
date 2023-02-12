@@ -25,9 +25,15 @@ const Veggie = () => {
               setVeggie(data.recipes)
         }
     }
-
+    
     return(
-       null
+       <>
+        {/* veggie container  */}
+       <div className="my-[4rem] container">
+            
+       </div>
+       
+       </>
     )
 }
 
