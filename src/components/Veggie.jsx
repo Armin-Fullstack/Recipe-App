@@ -1,51 +1,61 @@
-import { useEffect, useState } from "react"
-
+import { useEffect, useState } from "react";
 
 const Veggie = () => {
-    const [veggie , setVeggie] = useState([])
+  const [veggie, setVeggie] = useState([]);
 
-    useEffect(() => {
-        getVeggie()
-    } , [])
+  useEffect(() => {
+    getVeggie();
+  }, []);
 
-    // fetch data
-    const getVeggie = async () => {
-        // getting the items from local storage
-        const check = localStorage.getItem("vegetarian")
-        if(check) {
-            // pulling back from local storage- string to an array
-            setVeggie(JSON.parse(check))
-        } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${
-                import.meta.env.VITE_APP_API_KEY
-              }&number=9&tags=vegetarian`)
-              const data = await api.json()
-              // setting the items to local storage
-              localStorage.setItem("vegetarian" , JSON.stringify(data.recipes))
-              setVeggie(data.recipes)
-        }
+  // fetch data
+  const getVeggie = async () => {
+    // getting the items from local storage
+    const check = localStorage.getItem("vegetarian");
+    if (check) {
+      // pulling back from local storage- string to an array
+      setVeggie(JSON.parse(check));
+    } else {
+      const api = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${
+          import.meta.env.VITE_APP_API_KEY
+        }&number=9&tags=vegetarian`
+      );
+      const data = await api.json();
+      // setting the items to local storage
+      localStorage.setItem("vegetarian", JSON.stringify(data.recipes));
+      setVeggie(data.recipes);
     }
-    
-    return(
-       <>
-        {/* veggie container  */}
-       <div className="my-[4rem] container">
-            <h1 className="mb-5">Vegetarian Picks</h1>
+  };
 
-            {/* rendering the cards */}
-            {veggie.map(element => {
-                return (
+  return (
+    <>
+      {/* veggie container  */}
+      <div className="my-[4rem] container">
+        <h1 className="mb-5">Vegetarian Picks</h1>
 
-                    // card container 
-                    <div className="pickgradient relative rounded-[2rem] overflow-hidden">
-                        
-                    </div>
-                )
-            })}
-       </div>
-       
-       </>
-    )
-}
+        {/* rendering the cards */}
+        {veggie.map((element) => {
+          return (
+            // card container
+            <div className="pickgradient relative rounded-[2rem] overflow-hidden">
+              <p
+                className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
+                  text-white text-center text-[0.7rem] w-full font-bold h-[40%] flex justify-center items-center"
+              >
+                {element.title}
+              </p>
+
+              <img
+                src={element.image}
+                alt={element.title}
+                className="w-full rounded-[2rem] cursor-grabbing"
+              />
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
 
 export default Veggie;
