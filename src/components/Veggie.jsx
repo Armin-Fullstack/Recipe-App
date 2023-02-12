@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 const Veggie = () => {
   const [veggie, setVeggie] = useState([]);
@@ -33,26 +35,36 @@ const Veggie = () => {
       <div className="my-[4rem] container">
         <h1 className="mb-5">Vegetarian Picks</h1>
 
-        {/* rendering the cards */}
-        {veggie.map((element) => {
-          return (
-            // card container
-            <div className="pickgradient relative rounded-[2rem] overflow-hidden">
-              <p
-                className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
+        <Splide options={{
+            perPage: 3,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "3rem"
+        }}>
+          {/* rendering the cards */}
+          {veggie.map((element) => {
+            return (
+              <SplideSlide key={element.id}>
+                {/* card container */}
+                <div className="pickgradient relative rounded-[2rem] overflow-hidden">
+                  <p
+                    className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
                   text-white text-center text-[0.7rem] w-full font-bold h-[40%] flex justify-center items-center"
-              >
-                {element.title}
-              </p>
+                  >
+                    {element.title}
+                  </p>
 
-              <img
-                src={element.image}
-                alt={element.title}
-                className="w-full rounded-[2rem] cursor-grabbing"
-              />
-            </div>
-          );
-        })}
+                  <img
+                    src={element.image}
+                    alt={element.title}
+                    className="w-full rounded-[2rem] cursor-grabbing"
+                  />
+                </div>
+              </SplideSlide>
+            );
+          })}
+        </Splide>
       </div>
     </>
   );
