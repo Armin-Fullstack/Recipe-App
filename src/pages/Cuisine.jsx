@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 const Cuisine = () => {
@@ -12,6 +12,11 @@ const Cuisine = () => {
           const data = await api.json()
           setCuisine(data.results)
     }
+
+    // Invoking the getCuisine function
+    useEffect(() => { 
+        getCuisine(params.type)
+    } , [params.type])
 
     return (
 
