@@ -7,7 +7,11 @@ const Category = () => {
         <>
         {/* Icons container */}
         <div className="flex justify-center items-center my-[2rem]">
-                
+                {/* Icons 1 */}
+                <NavLink to={"/cuisine/Italian"}>
+                    <FaPizzaSlice/>
+                    <h4>Italian</h4>
+                </NavLink>
         </div>
         
         </>
