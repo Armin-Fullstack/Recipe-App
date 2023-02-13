@@ -12,6 +12,21 @@ const Category = () => {
                     <FaPizzaSlice/>
                     <h4>Italian</h4>
                 </NavLink>
+                {/* Icons 2 */}
+                <NavLink to={"/cuisine/American"}>
+                    <FaHamburger/>
+                    <h4>American</h4>
+                </NavLink>
+                {/* Icons 3 */}
+                <NavLink to={"/cuisine/Thai"}>
+                    <GiNoodles/>
+                    <h4>Thai</h4>
+                </NavLink>
+                {/* Icons 4 */}
+                <NavLink to={"/cuisine/Japanese"}>
+                    <GiChopsticks/>
+                    <h4>Japanese</h4>
+                </NavLink>
         </div>
         
         </>
