@@ -1,7 +1,7 @@
 
 const Cuisine = () => {
     return (
-        null
+        <h1>Cuisine</h1>
     )
 }
 

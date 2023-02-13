@@ -10,7 +10,7 @@ const Pages = () => {
           {/* If the path matches / then render out Home component */}
           <Route path="/" element={<Home />} />
           {/* If the path matches /cuisine then render out Home component */}
-          <Route path="/cuisine" element={<Cuisine />} />
+          <Route path="/cuisine/:type" element={<Cuisine />} />
         </Routes>
       
     </>
