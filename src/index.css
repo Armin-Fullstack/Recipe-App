@@ -49,3 +49,7 @@
   color: white;
   font-size: 1.5rem;
 }
+
+.navlink.active {
+  background: linear-gradient(to right, #f27121 , #e94057);
+}
