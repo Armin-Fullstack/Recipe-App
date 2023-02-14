@@ -38,3 +38,14 @@
   cursor: pointer;
   transform: scale(0.8);
 }
+
+.navlink h4 {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.navlink svg {
+  color: white;
+  font-size: 1.5rem;
+}
