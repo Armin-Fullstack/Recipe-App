@@ -11,3 +11,15 @@
   display:inline-block;
   background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
 }
+
+@layer base {
+  h4 {
+   @apply text-[1rem] text-[#383838]
+  }
+}
+
+@layer base {
+  h3 {
+   @apply text-[1.5rem] text-[#383838] leading-[2.5rem] my-[2rem]
+  }
+}
