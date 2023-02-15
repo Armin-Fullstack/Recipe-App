@@ -53,3 +53,14 @@
 .navlink.active {
   background: linear-gradient(to right, #f27121 , #e94057);
 }
+
+.form-input {
+  background: linear-gradient(35deg, #494949 , #313131);
+  color: white;
+  padding: 1rem 3rem;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  border-radius: 1rem;
+  outline: none;
+}
