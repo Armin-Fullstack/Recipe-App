@@ -1,4 +1,7 @@
+import {useState} from "react"
 const Searched = () => {
+    const [searchedRecipes , setSearchedRecipes] = useState([])
+
   //Fetch data
   const getSearched = async (name) => {
     const api = await fetch(
@@ -8,6 +11,7 @@ const Searched = () => {
     );
 
     const data = await api.json();
+    setSearchedRecipes(data.results)
   };
 
   return <h1>Searched</h1>;
