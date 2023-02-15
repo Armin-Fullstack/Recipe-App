@@ -1,6 +1,8 @@
-import {useState} from "react"
+import {useEffect, useState} from "react"
+import { useParams } from "react-router-dom";
 const Searched = () => {
     const [searchedRecipes , setSearchedRecipes] = useState([])
+    const params = useParams()
 
   //Fetch data
   const getSearched = async (name) => {
@@ -13,6 +15,11 @@ const Searched = () => {
     const data = await api.json();
     setSearchedRecipes(data.results)
   };
+
+  useEffect(() => {
+    getSearched(params.search)
+  } , [params.search])
+
 
   return <h1>Searched</h1>;
 };
