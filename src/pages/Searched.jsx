@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Searched = () => {
     const [searchedRecipes , setSearchedRecipes] = useState([])
     const params = useParams()
@@ -30,8 +31,11 @@ const Searched = () => {
       {searchedRecipes.map(element => {
         return (
           <div key={element.id}>
-            <img src={element.image} alt={element.title} className="w-full rounded-[2rem]" />
+            <Link to={`/recipe/${element.id}`}>
+            <img src={element.image} alt={element.title} className="w-full rounded-[2rem] cursor-pointer" />
             <h4 className="text-center p-[1rem]">{element.title}</h4>
+            </Link>
+            
           </div>
         )
       })}
