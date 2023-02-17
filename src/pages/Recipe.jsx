@@ -35,6 +35,10 @@ const Recipe = () => {
                             <img src={details.image} alt={details.title} />
                      </div>
 
+                    {/* info container  */}
+                    <div className="flex flex-col space-y-4 items-start">
+                    
+                    </div>
                      
                 </div>
             </div>
