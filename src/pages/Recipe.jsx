@@ -22,7 +22,11 @@ const Recipe = () => {
     } , [params.name])
 
     return(
-        null
+
+        // Details section 
+        <section>
+            
+        </section>
     )
 }
 
