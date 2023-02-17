@@ -21,7 +21,17 @@ const Searched = () => {
   } , [params.search])
 
 
-  return <h1>Searched</h1>;
+  return (
+    <>
+
+    {/* searched container  */}
+    <div className="container max-w-5xl mx-auto px-10 grid gap-8 grid-cols-4">
+      
+    </div>
+    
+    </>
+    
+  )
 };
 
 export default Searched;
