@@ -2,6 +2,7 @@ import Cuisine from "./Cuisine";
 import Home from "./Home";
 import {Route, Routes } from "react-router-dom";
 import Searched from "./Searched";
+import Recipe from "./Recipe";
 
 const Pages = () => {
   return (
@@ -13,7 +14,9 @@ const Pages = () => {
           {/* If the path matches /cuisine then render out Home component */}
           <Route path="/cuisine/:type" element={<Cuisine />} />
           <Route path="/searched/:search" element={<Searched/>}/>
-        </Routes>
+          <Route path="/recipe/:name" element={<Recipe/>}/>
+          </Routes>
+        
       
     </>
   );
