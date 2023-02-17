@@ -1,8 +1,9 @@
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 
 const Recipe = () => {
-    
+    const [details , setDetails] = useState({})
     let params = useParams()
 
     // fetch details 
@@ -11,6 +12,7 @@ const Recipe = () => {
             import.meta.env.VITE_APP_API_KEY
           }`)
           const data = api.json()
+          setDetails(data)
           
     }
 
