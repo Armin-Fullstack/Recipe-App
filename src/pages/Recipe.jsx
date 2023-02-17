@@ -37,7 +37,10 @@ const Recipe = () => {
 
                     {/* info container  */}
                     <div className="flex flex-col space-y-4 items-start">
-                    
+                        {/* button container  */}
+                        <div className="flex space-x-4">
+            
+                        </div>
                     </div>
                      
                 </div>
