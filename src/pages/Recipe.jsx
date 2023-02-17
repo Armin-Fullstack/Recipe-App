@@ -29,7 +29,10 @@ const Recipe = () => {
             <div className="container max-w-5xl mx-auto">
                 {/* Details container  */}
                 <div className="flex justify-around">
-                     
+                     {/* title and image container  */}
+                     <div className="flex flex-col space-y-2">
+
+                     </div>
                 </div>
             </div>
         </section>
