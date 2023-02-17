@@ -25,7 +25,10 @@ const Recipe = () => {
 
         // Details section 
         <section>
-            
+            {/* main container  */}
+            <div className="container max-w-5xl mx-auto">
+                
+            </div>
         </section>
     )
 }
