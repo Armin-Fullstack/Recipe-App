@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 
@@ -11,11 +11,15 @@ const Recipe = () => {
         const api = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${
             import.meta.env.VITE_APP_API_KEY
           }`)
-          const data = api.json()
-          setDetails(data)
+          const data = await api.json()
           
+          setDetails(data)
+   
     }
 
+    useEffect(()=> {
+        getDetails()
+    } , [params.name])
 
     return(
         null
