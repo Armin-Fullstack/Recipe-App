@@ -30,9 +30,12 @@ const Recipe = () => {
                 {/* Details container  */}
                 <div className="flex justify-around">
                      {/* title and image container  */}
-                     <div className="flex flex-col space-y-2">
-
+                     <div className="flex flex-col space-y-3">
+                            <h2>{details.title}</h2>
+                            <img src={details.image} alt={details.title} />
                      </div>
+
+                     
                 </div>
             </div>
         </section>
