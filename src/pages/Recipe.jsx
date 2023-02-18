@@ -69,7 +69,13 @@ const Recipe = () => {
                 ></p>
               </>
             )}
-
+            {activeTab === "Ingredients" && (
+              <ul className="space-y-2">
+                {details.extendedIngredients.map((element) => (
+                  <li key={element.id}>{element.original}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
