@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams , Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Cuisine = () => {
   const [cuisine, setCuisine] = useState([]);
@@ -22,7 +23,12 @@ const Cuisine = () => {
 
   return (
         // cuisine container 
-    <div className="container max-w-5xl mx-auto px-10 grid gap-8 grid-cols-4">
+    <motion.div 
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    transition={{duration: 0.5}}
+    className="container max-w-5xl mx-auto px-10 grid gap-8 grid-cols-4">
         {/* rendering the items */}
         {cuisine.map(element => {
           return (
@@ -35,7 +41,7 @@ const Cuisine = () => {
             </div>
           )
         })}
-    </div>
+    </motion.div>
       
   );
 };
