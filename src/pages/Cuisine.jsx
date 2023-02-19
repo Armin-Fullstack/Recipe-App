@@ -28,7 +28,7 @@ const Cuisine = () => {
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     transition={{duration: 0.5}}
-    className="container max-w-5xl mx-auto px-10 grid gap-8 grid-cols-4">
+    className="main-container grid gap-8 grid-cols-4">
         {/* rendering the items */}
         {cuisine.map(element => {
           return (
