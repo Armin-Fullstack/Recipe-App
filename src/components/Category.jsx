@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom"
 
 const Category = () => {
     return (
-        <>
+        <div className="main-container px-6 md:px-0 my-12">
         {/* Icons container */}
-        <div className="flex justify-center items-center my-[2rem]">
+        <div className="flex flex-wrap justify-evenly">
                 {/* Icons 1 */}
                 <NavLink to={"/cuisine/Italian"} className="navlink">
                     <FaPizzaSlice/>
@@ -29,7 +29,7 @@ const Category = () => {
                 </NavLink>
         </div>
         
-        </>
+        </div>
     )
 }
 
