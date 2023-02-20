@@ -57,7 +57,7 @@ const Veggie = () => {
           {/* rendering the cards */}
           {veggie.map((element) => {
             return (
-              <SplideSlide key={element.id}>
+              <SplideSlide key={element.id} className="cursor-pointer">
                 {/* card container */}
                 <div className="pickgradient relative rounded-[2rem] overflow-hidden">
                   <Link to={`/recipe/${element.id}`}>

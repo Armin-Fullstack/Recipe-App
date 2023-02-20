@@ -23,16 +23,16 @@ const Searched = () => {
 
 
   return (
-    <>
+    <div className="main-container px-6">
 
     {/* searched container  */}
-    <div className="container max-w-5xl mx-auto px-10 grid gap-8 grid-cols-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 flex-col md:flex-row gap-4">
       {/* rendering the items  */}
       {searchedRecipes.map(element => {
         return (
           <div key={element.id}>
             <Link to={`/recipe/${element.id}`}>
-            <img src={element.image} alt={element.title} className="w-full rounded-[2rem] cursor-pointer" />
+            <img src={element.image} alt={element.title} className="w-full rounded-[2rem]" />
             <h4 className="text-center p-[1rem]">{element.title}</h4>
             </Link>
             
@@ -41,7 +41,7 @@ const Searched = () => {
       })}
     </div>
     
-    </>
+    </div>
     
   )
 };

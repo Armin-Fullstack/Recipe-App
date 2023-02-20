@@ -63,7 +63,7 @@ const Popular = () => {
           {/* rendering the cards */}
           {popular.map((element) => {
             return (
-              <SplideSlide key={element.id}>
+              <SplideSlide key={element.id} className="cursor-pointer">
                 {/* card container */}
                 <div className="pickgradient relative rounded-[2rem] overflow-hidden">
                   <Link to={`/recipe/${element.id}`}>
@@ -76,7 +76,7 @@ const Popular = () => {
                   <img
                     src={element.image}
                     alt={element.title}
-                    className="w-full rounded-[2rem] cursor-pointer"
+                    className="w-full rounded-[2rem]"
                   />
                   </Link>
                
