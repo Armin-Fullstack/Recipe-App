@@ -33,14 +33,27 @@ const Popular = () => {
   };
 
   return (
-    <>
+    <div className="main-container px-6">
       {/* section container */}
-      <div className="my-[4rem] container">
-        <h1 className="mb-5">Popular Picks</h1>
+      <div className="my-[4rem]">
+        <h1 className="mb-5 font-bold">Popular Picks</h1>
 
         <Splide
           options={{
             perPage: 4,
+            autoplay: true,
+            breakpoints: {
+              560: {
+                perPage: 1,
+                arrows: true,
+                pagination: true,
+                snap: true
+              },
+              1024: {
+                perPage: 3
+              }
+
+            },
             arrows: false,
             pagination: false,
             drag: "free",
@@ -73,7 +86,7 @@ const Popular = () => {
           })}
         </Splide>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -31,13 +31,24 @@ const Veggie = () => {
   };
 
   return (
-    <>
+    // main container 
+    <div className="main-container px-6">
       {/* veggie container  */}
-      <div className="my-[4rem] container">
-        <h1 className="mb-5">Vegetarian Picks</h1>
+      <div className="my-[4rem]">
+        <h1 className="mb-5 font-bold">Vegetarian Picks</h1>
 
         <Splide options={{
             perPage: 3,
+            autoplay: true,
+            breakpoints: {
+              560: {
+                perPage: 1,
+                arrows: true,
+                pagination: true,
+                snap: true
+              },
+              
+            },
             arrows: false,
             pagination: false,
             drag: "free",
@@ -70,7 +81,7 @@ const Veggie = () => {
           })}
         </Splide>
       </div>
-    </>
+    </div>
   );
 };
 
