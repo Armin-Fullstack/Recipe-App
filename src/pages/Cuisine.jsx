@@ -29,12 +29,12 @@ const Cuisine = () => {
     exit={{opacity: 0}}
     transition={{duration: 0.5}}
     className="main-container px-6">
-      <div className="flex flex-col md:flex-row flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 flex-col md:flex-row gap-4">
         {/* rendering the items */}
         {cuisine.map(element => {
           return (
               <Link to={`/recipe/${element.id}`}>
-              <img src={element.image} alt={element.title} className="w-xs mx-auto rounded-[2rem]"/>
+              <img src={element.image} alt={element.title} className="w-full rounded-[2rem]"/>
               <h4 className="text-center p-[1rem]">{element.title}</h4>
               </Link>
 
