@@ -65,8 +65,8 @@ const Popular = () => {
             return (
               <SplideSlide key={element.id} className="cursor-pointer">
                 {/* card container */}
-                <div className="pickgradient relative rounded-[2rem] overflow-hidden">
                   <Link to={`/recipe/${element.id}`}>
+                <div className="pickgradient relative rounded-[2rem] overflow-hidden">
                   <p
                     className="absolute z-10 left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[0%]
                   text-white text-center text-[0.7rem] w-full font-bold h-[40%] flex justify-center items-center"
@@ -78,9 +78,9 @@ const Popular = () => {
                     alt={element.title}
                     className="w-full rounded-[2rem]"
                   />
-                  </Link>
                
                 </div>
+                  </Link>
               </SplideSlide>
             );
           })}

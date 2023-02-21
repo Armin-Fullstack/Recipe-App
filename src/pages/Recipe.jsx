@@ -26,24 +26,24 @@ const Recipe = () => {
     // Details section
     <section>
       {/* main container  */}
-      <div className="container max-w-5xl mx-auto">
+      <div className="main-container px-6">
         {/* Details container  */}
-        <div className="flex justify-evenly">
+        <div className="flex flex-col space-y-10 sm:space-y-0 sm:flex-row sm:space-x-12">
           {/* title and image container  */}
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-3 sm:w-1/2">
             <h2>{details.title}</h2>
-            <img src={details.image} alt={details.title} className="w-80" />
+            <img src={details.image} alt={details.title} className="w-full"/>
           </div>
 
           {/* info container  */}
-          <div className="flex flex-col space-y-4 items-start">
+          <div className="flex flex-col space-y-4 sm:w-1/2">
             {/* button container  */}
-            <div className="flex justify-center items-center space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <button
                 onClick={() => setActiveTab("Instructions")}
                 className={`${
                   activeTab === "Instructions" ? "active-btn" : ""
-                } px-5 py-2 border-2 border-black`}
+                } px-5 py-2 border-2 border-black `}
               >
                 Instructions
               </button>
@@ -52,7 +52,7 @@ const Recipe = () => {
                 onClick={() => setActiveTab("Ingredients")}
                 className={`${
                   activeTab === "Ingredients" ? "active-btn" : ""
-                } px-5 py-2 border-2 border-black`}
+                } px-5 py-2 border-2 border-black `}
               >
                 Ingredients
               </button>
@@ -70,9 +70,9 @@ const Recipe = () => {
               </>
             )}
             {activeTab === "Ingredients" && (
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-disc">
                 {details.extendedIngredients.map((element) => (
-                  <li key={element.id}>{element.original}</li>
+                  <li key={element.id} className="ml-6">{element.original}</li>
                 ))}
               </ul>
             )}
